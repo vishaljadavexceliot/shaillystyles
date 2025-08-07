@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shailly Styles - Handcrafted Kurtis & Ethnic Wear</title>
+    <meta name="description"
+        content="Discover exquisite handcrafted kurtis blending traditional Indian craftsmanship with modern elegance. Ethically made in India.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        /* Base Styles */
+        :root {
+            --deep-green: #143D2F;
+            --cream: #FDF8F0;
+            --light-green: #2A6B54;
+            --gold: #D4B07A;
+            --text-dark: #2A2A2A;
+            --text-light: #FDF8F0;
+            --accent-pink: #E8A7B3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--deep-green);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--gold), var(--accent-pink));
+            margin: 20px auto 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, var(--deep-green), var(--light-green));
+            color: var(--cream);
+            border: none;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-size: 0.95rem;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--light-green), var(--deep-green));
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(245, 240, 230, 0.95), rgba(245, 240, 230, 0.85));
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: linear-gradient(to bottom, rgba(20, 61, 47, 0.95), rgba(20, 61, 47, 0.85));
+        }
+
+        header.scrolled .logo,
+        header.scrolled nav ul li a {
+            color: var(--cream);
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            height: 80px;
+            width: auto;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+      
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+       
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 35px;
+            position: relative;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--deep-green);
+            margin-left: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(20, 61, 47, 0.75), rgba(20, 61, 47, 0.75)), url('bg.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--cream);
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            color: var(--cream);
+            line-height: 1.3;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .btn {
+            background: linear-gradient(135deg, var(--gold), var(--accent-pink));
+            color: var(--deep-green);
+            animation: pulse 2.5s infinite;
+        }
+
+        .hero .btn:hover {
+            background: var(--cream);
+            animation: none;
+        }
+
+        /* Products Section */
+        .products {
+            background-color: var(--cream);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-img {
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.08);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--gold), var(--accent-pink));
+            color: var(--deep-green);
+            padding: 8px 12px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .product-info p {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--deep-green);
+            font-size: 1.3rem;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+
+        .add-to-cart {
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 1.7rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            transform: scale(1.3);
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, var(--deep-green), var(--light-green));
+            color: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about .section-title {
+            color: var(--cream);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text h2 {
+            margin-bottom: 25px;
+            color: var(--gold);
+            font-size: 2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .about-img {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .about-img:hover {
+            transform: scale(1.03);
+        }
+
+        .about-pattern {
+            position: absolute;
+            opacity: 0.08;
+            z-index: 0;
+        }
+
+        .pattern-1 {
+            top: 60px;
+            left: 60px;
+            width: 180px;
+        }
+
+        .pattern-2 {
+            bottom: 60px;
+            right: 60px;
+            width: 240px;
+            transform: rotate(180deg);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--cream);
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .testimonials .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonials-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-container {
+            display: flex;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .testimonial {
+            min-width: 100%;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .testimonial-content:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .testimonial-content::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            color: var(--gold);
+            opacity: 0.15;
+            position: absolute;
+            top: 15px;
+            left: 25px;
+        }
+
+        .testimonial-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 4px solid var(--gold);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            font-size: 1.15rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--deep-green);
+            margin-bottom: 8px;
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .slider-btn {
+            background: none;
+            border: none;
+            font-size: 1.7rem;
+            color: var(--deep-green);
+            cursor: pointer;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            background: var(--deep-green);
+            color: var(--cream);
+        }
+
+        /* Contact Section */
+        .contact {
+            height: 70vh;
+            background: linear-gradient(rgba(20, 61, 47, 0.75), rgba(20, 61, 47, 0.75)), url('bg1.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--cream);
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact .section-title {
+            color: var(--cream);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 25px;
+            color: var(--gold);
+            font-size: 2rem;
+        }
+
+        .contact-details {
+            margin-bottom: 40px;
+        }
+
+        .contact-details p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+        }
+
+        .contact-details i {
+            margin-right: 12px;
+            color: var(--gold);
+            font-size: 1.3rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1.4rem;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--deep-green);
+            transform: translateY(-6px);
+        }
+
+        .contact-pattern {
+            position: absolute;
+            opacity: 0.08;
+            z-index: 0;
+        }
+
+        .contact-pattern-1 {
+            top: 120px;
+            left: 120px;
+            width: 220px;
+        }
+
+        .contact-pattern-2 {
+            bottom: 120px;
+            right: 120px;
+            width: 280px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .newsletter-form button {
+            background: linear-gradient(135deg, var(--gold), var(--accent-pink));
+            color: var(--deep-green);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--cream);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 25px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .footer-pattern {
+            position: absolute;
+            opacity: 0.08;
+            z-index: 0;
+            width: 180px;
+        }
+
+        .footer-pattern-1 {
+            top: 60px;
+            left: 60px;
+        }
+
+        .footer-pattern-2 {
+            bottom: 60px;
+            right: 60px;
+            transform: rotate(180deg);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-title {
+                font-size: 2.3rem;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .header-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(135deg, var(--deep-green), var(--light-green));
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.4s ease;
+                z-index: 1000;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 20px 0;
+            }
+            
+            nav ul li a {
+                color: var(--cream);
+                font-size: 1.7rem;
+            }
+
+            .hero-content {
+                padding: 0 25px;
+            }
+
+            .testimonials-slider {
+                max-width: 100%;
+            }
+
+            .testimonial {
+                padding: 20px 10px;
+            }
+
+            .testimonial-content {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .product-img {
+                height: 350px;
+            }
+
+            .contact {
+                height: 80vh;
+            }
+
+            .testimonial-content {
+                padding: 20px 15px;
+            }
+
+            .testimonial-text {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container header-container">
+            <img src="logo.png" alt="Shailly Styles Logo" class="logo">
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Collections</a></li>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
+    
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Timeless Elegance, Handcrafted with Love</h1>
+            <p>Each Shailly Styles kurti is a masterpiece of India's textile heritage, crafted by skilled artisans using
+                traditional techniques with a modern twist.</p>
+            <a href="#products" class="btn">Explore Our Collections</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Artisanal Collections</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 50px;">Discover our seasonal collections that
+                fuse traditional craftsmanship with contemporary elegance, creating timeless pieces that narrate stories
+                of heritage.</p>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-img">
+                        <img src="product.jpeg" alt="Floral Anarkali Kurti">
+                    </div>
+                    <div class="product-info">
+                        <h3>Floral Anarkali</h3>
+                        <p>Hand-embroidered with vibrant floral motifs, this Anarkali showcases Rajasthan's exquisite
+                            gota patti craftsmanship.</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="original-price">₹3,499</span>
+                                <span class="price">₹2,699</span>
+                            </div>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="product.jpeg" alt="Royal Straight Cut Kurti">
+                    </div>
+                    <div class="product-info">
+                        <h3>Royal Straight Cut</h3>
+                        <p>Inspired by Mughal artistry, this kurti features intricate zari work and mirror
+                            embellishments from Gujarat's finest artisans.</p>
+                        <div class="product-price">
+                            <span class="price">₹2,199</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge">New Arrival</div>
+                    <div class="product-img">
+                        <img src="product.jpeg" alt="Traditional A-Line Kurti">
+                    </div>
+                    <div class="product-info">
+                        <h3>Traditional A-Line</h3>
+                        <p>Adorned with authentic Bagru prints, this A-line kurti celebrates Rajasthan's ancient block
+                            printing heritage.</p>
+                        <div class="product-price">
+                            <span class="price">₹1,999</span>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="product.jpeg" alt="Asymmetrical Kurti">
+                    </div>
+                    <div class="product-info">
+                        <h3>Asymmetrical Delight</h3>
+                        <p>A contemporary twist on Lucknow's chikankari, featuring delicate white-on-white embroidery in
+                            an asymmetrical silhouette.</p>
+                        <div class="product-price">
+                            <div>
+                                <span class="original-price">₹3,199</span>
+                                <span class="price">₹2,499</span>
+                            </div>
+                            <button class="add-to-cart"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 60px;">
+                <a href="#" class="btn">Explore All Collections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">Our Artisan Legacy</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Crafting Heritage, One Step at a Time</h2>
+                    <p>Shailly Styles was started in 2025 in Surat, Gujarat, by a passionate housewife and her student partner. What began as a small idea has grown into a heartfelt mission — to celebrate India’s textile traditions through simple, honest fashion.</p>
+                    <p>We are at the very beginning of our journey, learning, exploring, and creating with love. Each piece we design reflects our appreciation for handmade beauty, cultural roots, and timeless style.</p>
+                    <p>While we’re not collaborating with artisans yet, our dream is to grow slowly and meaningfully — supporting local craftsmanship and making fashion that feels personal, ethical, and proud of its heritage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Our Community's Voice</h2>
+            <div class="testimonials-slider">
+                <div class="testimonials-container" id="testimonialsContainer">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Priya Sharma"
+                                class="testimonial-avatar">
+                            <p class="testimonial-text">"The craftsmanship of my Anarkali kurti is simply stunning! The
+                                fabric is so comfortable, and the handwork is flawless. It's my favorite for every
+                                special occasion."</p>
+                            <p class="testimonial-author">Priya Sharma</p>
+                            <p class="testimonial-role">Delhi | Customer since 2018</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Ananya Patel"
+                                class="testimonial-avatar">
+                            <p class="testimonial-text">"Shailly Styles' dedication to ethical fashion is inspiring.
+                                Each kurti feels like a piece of art, and I love supporting artisans through my
+                                purchases."</p>
+                            <p class="testimonial-author">Ananya Patel</p>
+                            <p class="testimonial-role">Mumbai | Customer since 2017</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Neha Kapoor"
+                                class="testimonial-avatar">
+                            <p class="testimonial-text">"The blend of traditional techniques and modern designs is
+                                perfect. The customer service team was amazing in helping me find the right fit!"</p>
+                            <p class="testimonial-author">Neha Kapoor</p>
+                            <p class="testimonial-role">Bangalore | Customer since 2019</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>We're Here for You</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> info@shaillystyles.com</p>
+                        <p><i class="fas fa-phone-alt"></i> <a href="tel:9106877060">91068 77060</a></p>
+                        <p><i class="fas fa-phone-alt"></i> <a href="tel:7069013051">70690 13051</a></p>
+
+                    </div>
+                    <h3>Follow Our Journey</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/shailly_styles?igsh=dmRsMWFhZGQ2aGdt" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when a nav link is clicked
+        const navLinks = document.querySelectorAll('#navMenu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Testimonials Slider
+        const testimonialsContainer = document.getElementById('testimonialsContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const testimonials = document.querySelectorAll('.testimonial');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            testimonialsContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            updateSlider();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+            updateSlider();
+        });
+
+        // Auto-slide every 5 seconds
+        let autoSlide = setInterval(() => {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            updateSlider();
+        }, 5000);
+
+        // Pause auto-slide on hover
+        testimonialsContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoSlide);
+        });
+
+        testimonialsContainer.addEventListener('mouseleave', () => {
+            autoSlide = setInterval(() => {
+                currentIndex = (currentIndex + 1) % testimonials.length;
+                updateSlider();
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
